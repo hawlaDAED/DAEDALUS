@@ -1,0 +1,68 @@
+<?xml version="1.1" encoding="UTF-8" ?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<conf:schema version="1.1"
+             xmlns:conf="http://www.w3.org/2001/XMLSchema"
+             elementFormDefault="qualified" attributeFormDefault="qualified">
+    <conf:complexType name="device">
+        <conf:sequence maxOccurs="1">
+            <conf:element name="dev_ID" type="conf:unsignedShort" nillable="false"></conf:element>
+            <conf:element name="dev_name" type="dev_name"></conf:element>
+            <conf:element name="IP" type="IPv4"></conf:element>
+        </conf:sequence>
+    </conf:complexType>
+    <conf:complexType name="transport">
+        <conf:sequence>
+            <conf:element name="sub_mask" type="CIDR_subnet"></conf:element>
+            <conf:element name="port" type="conf:unsignedShort"></conf:element>
+            <conf:element name="dev_map">
+                <conf:complexType>
+                    <conf:sequence maxOccurs="1">
+                        <conf:element name="device" type="device" maxOccurs="50"></conf:element>
+                    </conf:sequence>
+                </conf:complexType>
+                <conf:key name="newKey">
+                    <conf:selector xpath="device"/>
+                    <conf:field xpath="dev_ID"/>
+                </conf:key>
+            </conf:element>
+        </conf:sequence>
+    </conf:complexType>
+    <conf:complexType name="client"></conf:complexType>
+    <conf:complexType name="IOmanager"></conf:complexType>
+    <conf:complexType name="Daedalus_Config">
+        <conf:sequence>
+            <conf:element name="IOmanager" type="IOmanager"></conf:element>
+            <conf:element name="transport" type="transport"></conf:element>
+            <conf:element name="client" type="client"></conf:element>
+        </conf:sequence>
+    </conf:complexType>
+    <conf:element name="Daedalus_Config" type="Daedalus_Config"></conf:element>
+    <conf:simpleType name="dev_name">
+        <conf:restriction base="conf:string">
+            <conf:maxLength value="15"/>
+            <conf:minLength value="1"/>
+        </conf:restriction>
+    </conf:simpleType>
+   <conf:simpleType name="IPv4">
+    <conf:annotation>
+      <conf:documentation>
+        An IP version 4 address.
+      </conf:documentation>
+    </conf:annotation>
+    <conf:restriction base="conf:token">
+      <conf:pattern value="(25[0-5]|2[0-4][0-9]|[0-1]?[0-9]?[0-9])\.(25[0-5]|2[0-4][0-9]|[0-1]?[0-9]?[0-9])\.(25[0-5]|2[0-4][0-9]|[0-1]?[0-9]?[0-9])\.(25[0-5]|2[0-4][0-9]|[0-1]?[0-9]?[0-9])"/>
+      <conf:pattern value="[0-9A-Fa-f]{8}"/>
+    </conf:restriction>
+  </conf:simpleType>
+    <conf:simpleType name="CIDR_subnet">
+        <conf:restriction base="conf:unsignedByte">
+            <conf:maxInclusive value="32"/>
+            <conf:minInclusive value="0"/>
+        </conf:restriction>
+    </conf:simpleType>
+</conf:schema>

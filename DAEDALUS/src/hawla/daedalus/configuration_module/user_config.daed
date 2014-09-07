@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><Daedalus_Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="./user_config_schema.xsd">
+    <IOmanager/>
+    <transport>
+        <sub_mask>22</sub_mask>
+        <port>502</port>
+        <dev_map>
+            <device>
+                <dev_ID> 1 </dev_ID>
+                <dev_name>AffemitWaffe</dev_name>
+                <IP>192.168.2.11</IP>
+            </device>
+        </dev_map>
+    </transport>
+    <client/>
+</Daedalus_Config>

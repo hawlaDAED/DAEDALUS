@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://configuration.h" uri="navigationshilfe1.t-online.de/dnserror.url_http_/configuration.h/index.xml"/>
+    <system systemId="http://configuration.hawla/unique" uri="navigationshilfe1.t-online.de/dnserror.url_http_/configuration.hawla/index.xml"/>
+    <system systemId="http://www.config.hawla" uri="navigationshilfe1.t-online.de/dnserror.url_http_/www.config.hawla/index.xml"/>
+    <system systemId="http://www.config" uri="navigationshilfe1.t-online.de/dnserror.url_http_/www.config/index.xml"/>
+    <system systemId="http://www.w3.org/2001/" uri="www.w3.org/2001/index"/>
+    <system systemId="http://www.daedalus." uri="navigationshilfe1.t-online.de/dnserror.url_http_/www.daedalus/index.xml"/>
+</catalog>
