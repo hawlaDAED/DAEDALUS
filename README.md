@@ -3,7 +3,7 @@ Daedalus
 
 This README is not yet complete.  
 
-This project is a sister project of Icarus (https://github.com/TheDudes/Project_Icarus). Icarus interprets a structured text and then forwards binary commands to Daedalus via TCP/IP. Daedalus interprets these commands and translates them to the more less high-leveled Modbus protocol.
+This project is a sister project of Icarus (https://github.com/TheDudes/Project_Icarus). Icarus interprets a structured text and then forwards binary commands to Daedalus via TCP/IP. Daedalus interprets these commands and translates them to the less high-leveled Modbus protocol.
 That means: Daedalus encapsulates polling work and simplifies the protocol for Icarus.
 
 SPS2Modbus Protocol
