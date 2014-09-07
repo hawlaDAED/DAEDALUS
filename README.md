@@ -1,6 +1,8 @@
 Daedalus
 ========
 
+This README is not yet complete.  
+
 This project is a sister project of Icarus (https://github.com/TheDudes/Project_Icarus). Icarus interprets a structured text and then forwards binary commands to Daedalus via TCP/IP. Daedalus interprets these commands and translates them to the more less high-leveled Modbus protocol.
 That means: Daedalus encapsulates polling work and simplifies the protocol for Icarus.
 
@@ -47,6 +49,30 @@ These fields differ depending on the type of message:
 
 
 <TODO: the lists mentioned above>
+
+How to build and run
+--------------------
+
+This project is thought to be developed using NetBeans. So it can be build using ANT.  
+
+To start the server and the configuration TUI execute runDaed.sh in the folder DAEDALUS:
+```
+$ bash runDaed.sh
+```
+
+To run a test SPS execute runTest.sh in the folder DAEDALUS:
+```
+$ bash runTest.sh
+```
+
+The program will log to $HOME/DAED_runtimeX.log
+
+
+Third-party software
+--------------------
+
+This software includes a build of "Charva" (http://www.pitman.co.za/projects/charva/).
+Charva is licensed under the "GNU Lesser General Public License".
 
 
 
